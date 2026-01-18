@@ -1,19 +1,15 @@
 
 [build]
-  command = "npm run build"
-  publish = "dist"
+  publish = "."
 
-# Ensure /admin/ is accessible
+# Ensure /admin/ is accessible directly
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
 
-# Catch-all for SPA hash routing
+# Catch-all for SPA hash routing to prevent 404s on refresh
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[template.environment]
-  API_KEY = "Set your Gemini API Key in Netlify UI if using AI features"
