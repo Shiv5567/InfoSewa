@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Nepal's Information Portal",
   "scripts": {
-    "build": "mkdir -p dist && cp -r index.html index.tsx metadata.json types.ts constants.tsx components pages admin _redirects dist/ 2>/dev/null || true",
-    "start": "echo 'Run this in a local server or Netlify'"
+    "build": "mkdir -p dist/uploads && cp index.html index.tsx metadata.json types.ts constants.tsx dist/ && cp -r components pages admin dist/ && cp _redirects dist/ 2>/dev/null || true",
+    "start": "echo 'Local dev server needed for TSX'"
   },
   "dependencies": {
     "react": "^19.0.0",

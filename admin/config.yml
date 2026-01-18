@@ -1,9 +1,9 @@
 
 backend:
   name: git-gateway
-  branch: main # Ensure this matches your GitHub branch
+  branch: main
 
-media_folder: "public/uploads"
+media_folder: "uploads"
 public_folder: "/uploads"
 site_url: https://infossewa.netlify.app
 display_url: https://infossewa.netlify.app
@@ -15,18 +15,13 @@ collections:
     folder: "content/notices"
     create: true
     slug: "{{slug}}"
-    editor:
-      preview: false
     fields:
-      - {label: "Post Title", name: "title", widget: "string", hint: "Example: Myadi Police Result 2081"}
+      - {label: "Post Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-      - {label: "Category", name: "category", widget: "select", options: ["Government Notices", "University & Colleges", "Loksewa News"]}
-      - {label: "Short Excerpt", name: "excerpt", widget: "text", hint: "Brief summary for search results"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Official PDF File", name: "pdfUrl", widget: "file", required: false, hint: "Upload the notice PDF here"}
+      - {label: "Category", name: "category", widget: "select", options: ["Government Notices", "University & Colleges", "Exam Results"]}
+      - {label: "Short Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Official PDF File", name: "pdfUrl", widget: "file", required: false}
       - {label: "Full Content", name: "body", widget: "markdown"}
-      - {label: "SEO Title", name: "seo_title", widget: "string", required: false}
-      - {label: "SEO Description", name: "seo_desc", widget: "text", required: false}
 
   - name: "results"
     label: "🎓 Exam Results"
@@ -37,33 +32,5 @@ collections:
     fields:
       - {label: "Exam Name", name: "title", widget: "string"}
       - {label: "Result Date", name: "date", widget: "datetime"}
-      - {label: "Organization", name: "org", widget: "select", options: ["TU", "PU", "KU", "Loksewa", "TSC"]}
       - {label: "Result PDF", name: "pdfUrl", widget: "file"}
-      - {label: "Instructions/Details", name: "body", widget: "markdown"}
-
-  - name: "articles"
-    label: "📝 Education Articles"
-    label_singular: "Article"
-    folder: "content/articles"
-    create: true
-    slug: "blog-{{slug}}"
-    fields:
-      - {label: "Article Headline", name: "title", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", default: "InfosSewa Team"}
-      - {label: "Published Date", name: "date", widget: "datetime"}
-      - {label: "Thumbnail", name: "image", widget: "image"}
-      - {label: "Article Body", name: "body", widget: "markdown"}
-
-  - name: "settings"
-    label: "⚙️ Site Settings"
-    delete: false
-    editor:
-      preview: false
-    files:
-      - name: "general"
-        label: "General Settings"
-        file: "content/settings.json"
-        fields:
-          - {label: "Site Name", name: "site_name", widget: "string"}
-          - {label: "Support Email", name: "contact_email", widget: "string"}
-          - {label: "Footer Text", name: "footer_text", widget: "text"}
+      - {label: "Details", name: "body", widget: "markdown"}
