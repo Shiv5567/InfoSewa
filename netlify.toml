@@ -1,14 +1,18 @@
 
 [build]
   publish = "."
+  command = ""
 
-# Ensure /admin/ is accessible directly
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 301
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
 
-# Catch-all for SPA hash routing to prevent 404s on refresh
 [[redirects]]
   from = "/*"
   to = "/index.html"
