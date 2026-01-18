@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InfosSewa Admin | Content Manager</title>
+  <!-- Link to the configuration file explicitly -->
+  <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -12,7 +14,7 @@
   <!-- Decap CMS Script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Handle Login Redirect
+    // Handle Login Redirect and Identity
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {

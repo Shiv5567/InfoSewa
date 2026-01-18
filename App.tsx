@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import Home from './pages/Home';
-import NoticeDetail from './pages/NoticeDetail';
-import { MOCK_POSTS, SITE_NAME } from './constants';
-import { Post } from './types';
+import Home from './pages/Home.tsx';
+import NoticeDetail from './pages/NoticeDetail.tsx';
+import { MOCK_POSTS, SITE_NAME } from './constants.tsx';
+import { Post } from './types.ts';
 
 // Extend window for Netlify Identity
 declare global {
@@ -51,11 +51,9 @@ const App: React.FC = () => {
   };
 
   const openAdmin = () => {
-    // If Netlify Identity is available, open the modal for login
     if (window.netlifyIdentity) {
       window.netlifyIdentity.open();
     } else {
-      // Fallback redirect
       window.location.href = '/admin/';
     }
   };
@@ -193,10 +191,6 @@ const App: React.FC = () => {
             <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
               &copy; 2024 INFOSSEWA NETWORK &bull; KATHMANDU, NEPAL
             </p>
-            <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-700">
-              <button className="hover:text-slate-400 transition">Cookies</button>
-              <button className="hover:text-slate-400 transition">Accessibility</button>
-            </div>
           </div>
         </div>
       </footer>
